@@ -23,6 +23,7 @@ struct Artist {
     static func artistsFromBundle() -> [Artist] {
         var artists = [Artist]()
         
+        /* json 파일을 읽어서 파싱하는 부분 */
         guard let url = Bundle.main.url(forResource: "artistry", withExtension: "json") else {return artists}
         
         do {
