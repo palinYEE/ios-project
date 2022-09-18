@@ -31,7 +31,8 @@ class ViewController: UIViewController {
         searchController.searchBar.scopeButtonTitles = scopeButtonTitleList
 
         searchController.searchBar.showsScopeBar = true /* 항상 scope bar 를 보이게 하는 옵션 */
-        searchController.obscuresBackgroundDuringPresentation = true
+        searchController.obscuresBackgroundDuringPresentation = false   /* 검색시 백그라운드를 비활성화 처리 */
+        
         searchController.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
         

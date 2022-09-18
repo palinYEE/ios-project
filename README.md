@@ -15,3 +15,4 @@ ios 개발에 사용되는 기본적인 프로젝트들을 모아둔 레파지�
     * ![](proj_gif/7_artistry.gif)
 8. CandySearch_YYJ: candy 목록을 검색하고 클릭시 물품 사진을 보여주는 프로젝트입니다.
     * 해당 프로제그를 통해서 ui search bar 를 다루는 법을 배울 수 있습니다.
+    * ![](proj_gif/8_Candy_Search.gif)
