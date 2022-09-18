@@ -14,18 +14,26 @@ class ViewController: UIViewController {
     var filterCandies: [Candy] = []
     var filterCandies2: [Candy] = []
     
+    /* scope button title list */
     let scopeButtonTitleList: [String] = [
         "All", "Chocolate", "Hard", "Other"
       ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    /* navigation setting */
+    func navigationSetting() {
         self.navigationItem.title = "Candy Search"
         self.navigationController?.navigationBar.prefersLargeTitles = true // Large title로 하고싶을 때 추가
-        
+    }
+    
+    /* table view setting */
+    func tableViewSetting() {
         candyTableView.delegate = self
         candyTableView.dataSource = self
-        
+    }
+    
+    /* ui search controller setting */
+    func uiSearchControllerSetting() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
         searchController.searchBar.scopeButtonTitles = scopeButtonTitleList
@@ -35,7 +43,10 @@ class ViewController: UIViewController {
         
         searchController.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
-        
+    }
+    
+    /* candies Data Setting */
+    func candiesDataSetting() {
         candies = [
             Candy(category:"Chocolate", name:"Chocolate Bar"),
             Candy(category:"Chocolate", name:"Chocolate Chip"),
@@ -49,7 +60,17 @@ class ViewController: UIViewController {
         ]
         filterCandies = candies
         filterCandies2 = candies
-        
+    }
+    
+    func doSetting() {
+        navigationSetting()
+        tableViewSetting()
+        uiSearchControllerSetting()
+        candiesDataSetting()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         let nib = UINib(nibName: "CandyTableViewCell", bundle: nil)
         self.candyTableView.register(nib, forCellReuseIdentifier: "CandyTableViewCell")
 

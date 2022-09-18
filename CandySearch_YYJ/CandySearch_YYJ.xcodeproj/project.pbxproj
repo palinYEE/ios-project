@@ -86,6 +86,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64469CFB28D7503400EFE10F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				647507FE28D69E9F00076171 /* CandyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		64469CFC28D7503D00EFE10F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				647507D528D6997C00076171 /* LaunchScreen.storyboard */,
+				647507CB28D6997A00076171 /* ViewController.swift */,
+				6475080028D7034A00076171 /* subViewController.swift */,
+				647507CD28D6997A00076171 /* Main.storyboard */,
+				647507FA28D69E0800076171 /* CandyTableViewCell.swift */,
+				647507FB28D69E0800076171 /* CandyTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		64469CFD28D7504900EFE10F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		64469CFE28D7512100EFE10F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				647507C728D6997A00076171 /* AppDelegate.swift */,
+				647507C928D6997A00076171 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		64469CFF28D7514200EFE10F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				647507D328D6997C00076171 /* Assets.xcassets */,
+				647507D028D6997A00076171 /* CandySearch_YYJ.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		647507BB28D6997A00076171 = {
 			isa = PBXGroup;
 			children = (
@@ -109,18 +155,12 @@
 		647507C628D6997A00076171 /* CandySearch_YYJ */ = {
 			isa = PBXGroup;
 			children = (
-				647507C728D6997A00076171 /* AppDelegate.swift */,
-				647507C928D6997A00076171 /* SceneDelegate.swift */,
-				647507CB28D6997A00076171 /* ViewController.swift */,
-				6475080028D7034A00076171 /* subViewController.swift */,
-				647507CD28D6997A00076171 /* Main.storyboard */,
-				647507D328D6997C00076171 /* Assets.xcassets */,
-				647507D528D6997C00076171 /* LaunchScreen.storyboard */,
+				64469CFF28D7514200EFE10F /* Resources */,
+				64469CFE28D7512100EFE10F /* AppDelegate */,
+				64469CFD28D7504900EFE10F /* ViewModel */,
+				64469CFC28D7503D00EFE10F /* View */,
+				64469CFB28D7503400EFE10F /* Model */,
 				647507D828D6997C00076171 /* Info.plist */,
-				647507D028D6997A00076171 /* CandySearch_YYJ.xcdatamodeld */,
-				647507FA28D69E0800076171 /* CandyTableViewCell.swift */,
-				647507FB28D69E0800076171 /* CandyTableViewCell.xib */,
-				647507FE28D69E9F00076171 /* CandyModel.swift */,
 			);
 			path = CandySearch_YYJ;
 			sourceTree = "<group>";
