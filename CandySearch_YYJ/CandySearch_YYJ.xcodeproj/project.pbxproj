@@ -20,6 +20,7 @@
 		647507FC28D69E0800076171 /* CandyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647507FA28D69E0800076171 /* CandyTableViewCell.swift */; };
 		647507FD28D69E0800076171 /* CandyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647507FB28D69E0800076171 /* CandyTableViewCell.xib */; };
 		647507FF28D69E9F00076171 /* CandyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647507FE28D69E9F00076171 /* CandyModel.swift */; };
+		6475080128D7034A00076171 /* subViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6475080028D7034A00076171 /* subViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		647507FA28D69E0800076171 /* CandyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyTableViewCell.swift; sourceTree = "<group>"; };
 		647507FB28D69E0800076171 /* CandyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandyTableViewCell.xib; sourceTree = "<group>"; };
 		647507FE28D69E9F00076171 /* CandyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyModel.swift; sourceTree = "<group>"; };
+		6475080028D7034A00076171 /* subViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				647507C728D6997A00076171 /* AppDelegate.swift */,
 				647507C928D6997A00076171 /* SceneDelegate.swift */,
 				647507CB28D6997A00076171 /* ViewController.swift */,
+				6475080028D7034A00076171 /* subViewController.swift */,
 				647507CD28D6997A00076171 /* Main.storyboard */,
 				647507D328D6997C00076171 /* Assets.xcassets */,
 				647507D528D6997C00076171 /* LaunchScreen.storyboard */,
@@ -276,6 +279,7 @@
 				647507C828D6997A00076171 /* AppDelegate.swift in Sources */,
 				647507FF28D69E9F00076171 /* CandyModel.swift in Sources */,
 				647507CA28D6997A00076171 /* SceneDelegate.swift in Sources */,
+				6475080128D7034A00076171 /* subViewController.swift in Sources */,
 				647507FC28D69E0800076171 /* CandyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

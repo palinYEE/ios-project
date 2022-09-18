@@ -53,6 +53,14 @@ class ViewController: UIViewController {
         self.candyTableView.register(nib, forCellReuseIdentifier: "CandyTableViewCell")
 
     }
+    
+    /* segue 에 등록한 storyboard 에 데이터를 전달한다. */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? subViewController, let indexPath = candyTableView.indexPathForSelectedRow {
+            destination.CandyImageString = filterCandies2[indexPath.row].name
+            destination.CandyNameLabelString = filterCandies2[indexPath.row].name
+        }
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -68,7 +76,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CandyTableViewCell", for: indexPath) as! CandyTableViewCell
         cell.CandyName.text = filterCandies2[indexPath.row].name
         cell.category.text = filterCandies2[indexPath.row].category
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showCandy", sender: nil)
     }
 }
 
