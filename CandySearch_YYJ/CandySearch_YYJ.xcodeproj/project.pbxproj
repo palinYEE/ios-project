@@ -42,12 +42,12 @@
 
 /* Begin PBXFileReference section */
 		647507C428D6997A00076171 /* CandySearch_YYJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandySearch_YYJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		647507C728D6997A00076171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		647507C928D6997A00076171 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		647507CB28D6997A00076171 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		647507C728D6997A00076171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CandySearch_YYJ/AppDelegate/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		647507C928D6997A00076171 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = CandySearch_YYJ/AppDelegate/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
+		647507CB28D6997A00076171 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = CandySearch_YYJ/View/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		647507CE28D6997A00076171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		647507D128D6997A00076171 /* CandySearch_YYJ.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CandySearch_YYJ.xcdatamodel; sourceTree = "<group>"; };
-		647507D328D6997C00076171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		647507D328D6997C00076171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CandySearch_YYJ/Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		647507D628D6997C00076171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		647507D828D6997C00076171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		647507DD28D6997C00076171 /* CandySearch_YYJTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandySearch_YYJTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,10 +55,10 @@
 		647507E728D6997C00076171 /* CandySearch_YYJUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandySearch_YYJUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		647507EB28D6997C00076171 /* CandySearch_YYJUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandySearch_YYJUITests.swift; sourceTree = "<group>"; };
 		647507ED28D6997C00076171 /* CandySearch_YYJUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandySearch_YYJUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		647507FA28D69E0800076171 /* CandyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyTableViewCell.swift; sourceTree = "<group>"; };
-		647507FB28D69E0800076171 /* CandyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandyTableViewCell.xib; sourceTree = "<group>"; };
-		647507FE28D69E9F00076171 /* CandyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyModel.swift; sourceTree = "<group>"; };
-		6475080028D7034A00076171 /* subViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subViewController.swift; sourceTree = "<group>"; };
+		647507FA28D69E0800076171 /* CandyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CandyTableViewCell.swift; path = CandySearch_YYJ/View/CandyTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		647507FB28D69E0800076171 /* CandyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CandyTableViewCell.xib; path = CandySearch_YYJ/View/CandyTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		647507FE28D69E9F00076171 /* CandyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CandyModel.swift; path = CandySearch_YYJ/Model/CandyModel.swift; sourceTree = SOURCE_ROOT; };
+		6475080028D7034A00076171 /* subViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = subViewController.swift; path = CandySearch_YYJ/View/subViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +91,9 @@
 			children = (
 				647507FE28D69E9F00076171 /* CandyModel.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
+			name = Model;
+			path = CandySearch_YYJ/Model;
+			sourceTree = SOURCE_ROOT;
 		};
 		64469CFC28D7503D00EFE10F /* View */ = {
 			isa = PBXGroup;
@@ -104,15 +105,17 @@
 				647507FA28D69E0800076171 /* CandyTableViewCell.swift */,
 				647507FB28D69E0800076171 /* CandyTableViewCell.xib */,
 			);
-			path = View;
-			sourceTree = "<group>";
+			name = View;
+			path = CandySearch_YYJ/View;
+			sourceTree = SOURCE_ROOT;
 		};
 		64469CFD28D7504900EFE10F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
+			name = ViewModel;
+			path = CandySearch_YYJ/ViewModel;
+			sourceTree = SOURCE_ROOT;
 		};
 		64469CFE28D7512100EFE10F /* AppDelegate */ = {
 			isa = PBXGroup;
@@ -120,8 +123,9 @@
 				647507C728D6997A00076171 /* AppDelegate.swift */,
 				647507C928D6997A00076171 /* SceneDelegate.swift */,
 			);
-			path = AppDelegate;
-			sourceTree = "<group>";
+			name = AppDelegate;
+			path = CandySearch_YYJ/AppDelegate;
+			sourceTree = SOURCE_ROOT;
 		};
 		64469CFF28D7514200EFE10F /* Resources */ = {
 			isa = PBXGroup;
@@ -129,8 +133,9 @@
 				647507D328D6997C00076171 /* Assets.xcassets */,
 				647507D028D6997A00076171 /* CandySearch_YYJ.xcdatamodeld */,
 			);
-			path = Resources;
-			sourceTree = "<group>";
+			name = Resources;
+			path = CandySearch_YYJ/Resources;
+			sourceTree = SOURCE_ROOT;
 		};
 		647507BB28D6997A00076171 = {
 			isa = PBXGroup;
@@ -363,7 +368,8 @@
 				647507CE28D6997A00076171 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
+			path = CandySearch_YYJ/View;
+			sourceTree = SOURCE_ROOT;
 		};
 		647507D528D6997C00076171 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -371,7 +377,8 @@
 				647507D628D6997C00076171 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
+			path = CandySearch_YYJ/View;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
