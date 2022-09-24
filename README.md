@@ -16,3 +16,6 @@ ios 개발에 사용되는 기본적인 프로젝트들을 모아둔 레파지�
 8. CandySearch_YYJ: candy 목록을 검색하고 클릭시 물품 사진을 보여주는 프로젝트입니다.
     * 해당 프로제그를 통해서 ui search bar 를 다루는 법을 배울 수 있습니다.
     * ![](proj_gif/8_Candy_Search.gif)
+9. simpleRSSReader: url parsing 을 통해서 데이터를 추출하고 가공하는 기능을 구현한 내용입니다.
+    * 해당 프로젝트를 통해서 xml parsing, URLsession 을 다루는 법을 배울 수 있습니다.
+    * ![](proj_gif/9_simple%20RSS%20Reader.gif)
