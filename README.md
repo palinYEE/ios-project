@@ -19,3 +19,6 @@ ios 개발에 사용되는 기본적인 프로젝트들을 모아둔 레파지�
 9. simpleRSSReader: url parsing 을 통해서 데이터를 추출하고 가공하는 기능을 구현한 내용입니다.
     * 해당 프로젝트를 통해서 xml parsing, URLsession 을 다루는 법을 배울 수 있습니다.
     * ![](proj_gif/9_simple%20RSS%20Reader.gif)
+10. PhotoScroll_YYJ: 저장되어있는 이미지를 collection view 로 불러오고 이를 클릭시 세부 viewControll 을 볼수 있게 구현한 내용입니다.
+    * 해당 프로젝트를 통해서, UICollectionViewController, onboarding 을 배울 수 있습니다.
+    * ![](proj_gif/10_PhotoScroll.gif)
