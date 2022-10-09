@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     
     /* segue 설정 */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? detailPhotoViewController, let indexPath = photoCollectionTableView.indexPathsForSelectedItems?.first {
+            destination.imageNameString = photoList[indexPath.row]
+        }
     }
     
 }
@@ -60,8 +63,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showPhoto", sender: nil)
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "showPhoto", sender: nil)
+//    }
 }
 

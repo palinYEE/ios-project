@@ -18,7 +18,6 @@
 		646F064628E45FBF005CC1EE /* PhotoScroll_YYJUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646F064528E45FBF005CC1EE /* PhotoScroll_YYJUITests.swift */; };
 		646F064828E45FBF005CC1EE /* PhotoScroll_YYJUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646F064728E45FBF005CC1EE /* PhotoScroll_YYJUITestsLaunchTests.swift */; };
 		649A6CDA28EA9EAD00A5F5F0 /* photoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A6CD928EA9EAD00A5F5F0 /* photoCollectionViewCell.swift */; };
-		649A6CE128EAB09000A5F5F0 /* pageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A6CE028EAB09000A5F5F0 /* pageViewController.swift */; };
 		649A6CE328EAB0E900A5F5F0 /* detailPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A6CE228EAB0E900A5F5F0 /* detailPhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +54,6 @@
 		646F064528E45FBF005CC1EE /* PhotoScroll_YYJUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoScroll_YYJUITests.swift; sourceTree = "<group>"; };
 		646F064728E45FBF005CC1EE /* PhotoScroll_YYJUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoScroll_YYJUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		649A6CD928EA9EAD00A5F5F0 /* photoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCollectionViewCell.swift; sourceTree = "<group>"; };
-		649A6CE028EAB09000A5F5F0 /* pageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageViewController.swift; sourceTree = "<group>"; };
 		649A6CE228EAB0E900A5F5F0 /* detailPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +109,6 @@
 				646F062328E45FBE005CC1EE /* SceneDelegate.swift */,
 				646F062528E45FBE005CC1EE /* ViewController.swift */,
 				649A6CD928EA9EAD00A5F5F0 /* photoCollectionViewCell.swift */,
-				649A6CE028EAB09000A5F5F0 /* pageViewController.swift */,
 				649A6CE228EAB0E900A5F5F0 /* detailPhotoViewController.swift */,
 				646F062728E45FBE005CC1EE /* Main.storyboard */,
 				646F062D28E45FBF005CC1EE /* Assets.xcassets */,
@@ -275,7 +272,6 @@
 				649A6CDA28EA9EAD00A5F5F0 /* photoCollectionViewCell.swift in Sources */,
 				646F062228E45FBE005CC1EE /* AppDelegate.swift in Sources */,
 				646F062428E45FBE005CC1EE /* SceneDelegate.swift in Sources */,
-				649A6CE128EAB09000A5F5F0 /* pageViewController.swift in Sources */,
 				649A6CE328EAB0E900A5F5F0 /* detailPhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
