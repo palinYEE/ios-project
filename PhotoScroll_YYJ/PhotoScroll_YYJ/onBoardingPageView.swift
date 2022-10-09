@@ -1,7 +1,15 @@
+//
+//  OnBoardingPageView.swift
+//  OnboardingView
+//
+//  Created by yoon-yeoungjin on 2022/03/26.
+//
+
 import UIKit
 
 class OnBoardingPageView: UIPageViewController {
     
+    let photoList = ["photo1", "photo2", "photo3", "photo4", "photo5"]
     var pages = [UIViewController]()
     var bottomButton: NSLayoutConstraint?  // 버튼 관련 클래스 호출
     var pageControll = UIPageControl()      // 페이지 컨드롤러 호출
@@ -16,55 +24,52 @@ class OnBoardingPageView: UIPageViewController {
      각 페이지를 호출 및 셋팅
      */
     func makeView(){
-        let itemVC1 = OnBoardingViewController.init(nibName: "OnBoardingViewController", bundle: nil)
-        itemVC1.mainLabelText = "첫번째 페이지 입니다."
-        itemVC1.subLabelText = "해당 페이지는 첫번째 페이지로 셋팅되어있습니다. 아아아ㅏ아아ㅏ아아ㅏ아아ㅏ아ㅏ아아ㅏ"
-        itemVC1.imageNameText = UIImage(named: "onboarding1")
+        let itemVC1 = showDetailPhotoViewController.init(nibName: "showDetailPhotoViewController", bundle: nil)
+        itemVC1.imageNameString = photoList[0]
         
-        let itemVC2 = OnBoardingViewController.init(nibName: "OnBoardingViewController", bundle: nil)
-        itemVC2.mainLabelText = "두번째 페이지 입니다."
-        itemVC2.subLabelText = "해당 페이지는 두번째 페이지로 셋팅되어있습니다. 아아아ㅏ아아ㅏ아아ㅏ아아ㅏ아ㅏ아아ㅏ"
-        itemVC2.imageNameText = UIImage(named: "onboarding2")
+        let itemVC2 = showDetailPhotoViewController.init(nibName: "showDetailPhotoViewController", bundle: nil)
+        itemVC2.imageNameString = photoList[1]
         
-        let itemVC3 = OnBoardingViewController.init(nibName: "OnBoardingViewController", bundle: nil)
-        itemVC3.mainLabelText = "세번째 페이지 입니다."
-        itemVC3.subLabelText = "해당 페이지는 세번째 페이지로 셋팅되어있습니다. 아아아ㅏ아아ㅏ아아ㅏ아아ㅏ아ㅏ아아ㅏ"
-        itemVC3.imageNameText = UIImage(named: "onboarding3")
+        let itemVC3 = showDetailPhotoViewController.init(nibName: "showDetailPhotoViewController", bundle: nil)
+        itemVC3.imageNameString = photoList[2]
+        
+        let itemVC4 = showDetailPhotoViewController.init(nibName: "showDetailPhotoViewController", bundle: nil)
+        itemVC4.imageNameString = photoList[3]
+        
+        let itemVC5 = showDetailPhotoViewController.init(nibName: "showDetailPhotoViewController", bundle: nil)
+        itemVC5.imageNameString = photoList[4]
         
         pages.append(itemVC1)
         pages.append(itemVC2)
         pages.append(itemVC3)
+        pages.append(itemVC4)
+        pages.append(itemVC5)
         
-        setViewControllers([itemVC1], direction: .forward, animated: true, completion: nil)
+        switch(currentIndex) {
+        case 0:
+            setViewControllers([itemVC1], direction: .forward, animated: true, completion: nil)
+            break
+        case 1:
+            setViewControllers([itemVC2], direction: .forward, animated: true, completion: nil)
+            break
+        case 2:
+            setViewControllers([itemVC3], direction: .forward, animated: true, completion: nil)
+            break
+        case 3:
+            setViewControllers([itemVC4], direction: .forward, animated: true, completion: nil)
+            break
+        case 4:
+            setViewControllers([itemVC5], direction: .forward, animated: true, completion: nil)
+            break
+        default:
+            break
+            
+        }
+        
         
         self.dataSource = self
         self.delegate = self
     }
-    
-    /**
-     버튼 셋팅
-     */
-    func makeButton() {
-        let button = UIButton()
-        button.setTitle("확인", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .systemBlue
-        button.addTarget(self, action: #selector(dismissPage), for: .touchUpInside)
-        
-        self.view.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        button.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
-        button.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        bottomButton = button.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0)
-        bottomButton?.isActive = true
-        
-        hideButton()
-    }
-    
     /**
      페이지 컨트롤러 셋팅
      */
@@ -97,7 +102,7 @@ class OnBoardingPageView: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         makeView()
-        makeButton()
+//        makeButton()
         makeControll()
     }
 }

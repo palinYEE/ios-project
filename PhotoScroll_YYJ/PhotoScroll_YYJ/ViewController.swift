@@ -23,8 +23,8 @@ class ViewController: UIViewController {
     
     /* segue 설정 */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? detailPhotoViewController, let indexPath = photoCollectionTableView.indexPathsForSelectedItems?.first {
-            destination.imageNameString = photoList[indexPath.row]
+        if let destination = segue.destination as? OnBoardingPageView, let indexPath = photoCollectionTableView.indexPathsForSelectedItems?.first {
+            destination.currentIndex = indexPath.row
         }
     }
     
@@ -46,10 +46,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let width = collectionView.frame.width / 4 - 1 ///  3등분하여 배치, 옆 간격이 1이므로 1을 빼줌
-        print("collectionView width=\(collectionView.frame.width)")
-        print("cell하나당 width=\(width)")
-        print("root view width = \(self.view.frame.width)")
-
         let size = CGSize(width: width, height: width)
         return size
     }
@@ -62,9 +58,5 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "showPhoto", sender: nil)
-//    }
 }
 
