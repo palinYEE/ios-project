@@ -25,3 +25,6 @@ ios 개발에 사용되는 기본적인 프로젝트들을 모아둔 레파지�
 11. YYJ_ANIMATION: uiview 에 등록되어있는 도형들의 animation 효과 및 tableview 의 animation 효과를 구현한 내용입니다.
 	* 해당 프로젝트를 통해서, uiview와 tableView 의 animation 효과 적용을 배울 수 있습니다. 
 	* ![](proj_gif/11_YYJ_ANIMATION.gif)
+12. Tumblr_YYJ: navigation tool bar 를 이용하여 animation 효과를 구현한 내용입니다. 
+    * 해당 프로젝트를 통해서, dismiss 함수에 animation 을 적용시킬 수 있습니다.
+	* ![](proj_gif/12_Tumblr_YYJ.gif)
