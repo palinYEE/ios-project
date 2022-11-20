@@ -13,7 +13,7 @@ class TranstitionManager: NSObject {
 
 extension TranstitionManager: UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
+        return 10
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

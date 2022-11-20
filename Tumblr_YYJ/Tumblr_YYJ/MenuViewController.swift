@@ -35,6 +35,9 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func testButton(_ sender: Any) {
+        print("test")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
