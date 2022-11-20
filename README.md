@@ -28,3 +28,6 @@ ios 개발에 사용되는 기본적인 프로젝트들을 모아둔 레파지�
 12. Tumblr_YYJ: navigation tool bar 를 이용하여 animation 효과를 구현한 내용입니다. 
     * 해당 프로젝트를 통해서, dismiss 함수에 animation 을 적용시킬 수 있습니다.
 	* ![](proj_gif/12_Tumblr_YYJ.gif)
+13. TwitterBird_YYJ: SceneDelegate 에 있는 UIWindow를 이용하여 시작 화면에 animation을 구현하는 내용입니다.
+	* 해당 프로젝트를 통해서, 이미지의 사진 색을 배경과 반대로 해서 애니메이션으로 만들 수 있습니다.
+	* ![](proj_gif/13_TwitterBird_YYJ.gif)
