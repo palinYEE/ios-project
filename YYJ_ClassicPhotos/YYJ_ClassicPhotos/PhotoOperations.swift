@@ -78,7 +78,7 @@ class ImageDownloader: Operation {
                 photoRecord.image = UIImage(named: "Failed")
             }
         } catch let error as NSError {
-            print(error.domain)
+            print("\(photoRecord.url) - \(error.domain)")
         }
     }
 }

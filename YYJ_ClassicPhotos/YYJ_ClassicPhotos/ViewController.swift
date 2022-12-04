@@ -23,12 +23,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         fetchPhotoDetails()
-        print(photos)
     }
     
     fileprivate func fetchPhotoDetails() {
         let request = URLRequest(url: dataSourceURL!)
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
             if let error = error {
@@ -46,7 +45,6 @@ class ViewController: UIViewController {
                                 self.photos.append(photoRecord)
                             }
                         }
-                        
                         self.listTableVie.reloadData()
                         
                     }
@@ -54,7 +52,7 @@ class ViewController: UIViewController {
                     print(error.domain)
                 }
             }
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+//            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
     
@@ -109,6 +107,71 @@ class ViewController: UIViewController {
         pendingOperation.filtrationsInProgress[indexPath] = filterer
         pendingOperation.filtrationQueue.addOperation(filterer)
     }
+    
+    fileprivate func startFiltrationForRecord(photoDetail: PhotoRecord, indexPath: IndexPath) {
+        if let _ = pendingOperation.filtrationsInProgress[indexPath] {
+            return
+        }
+        
+        let filterer = ImageFiltration(photoRecord: photoDetail)
+        filterer.completionBlock = {
+            if filterer.isCancelled {
+                return
+            }
+            DispatchQueue.main.async {
+                self.pendingOperation.filtrationsInProgress.removeValue(forKey: indexPath)
+                self.listTableVie.reloadRows(at: [indexPath], with: .fade)
+            }
+        }
+        pendingOperation.filtrationsInProgress[indexPath] = filterer
+        pendingOperation.filtrationQueue.addOperation(filterer)
+    }
+    
+    
+    fileprivate func suspendAllOperations () {
+      pendingOperation.downloadQueue.isSuspended = true
+      pendingOperation.filtrationQueue.isSuspended = true
+    }
+    
+    fileprivate func resumeAllOperations () {
+      pendingOperation.downloadQueue.isSuspended = false
+      pendingOperation.filtrationQueue.isSuspended = false
+    }
+    
+    fileprivate func loadImagesForOnscreenCells () {
+      if let pathsArray = listTableVie.indexPathsForVisibleRows {
+        
+        var allPendingOperations = Set(pendingOperation.downloadsInProgress.keys)
+        allPendingOperations = allPendingOperations.union(pendingOperation.filtrationsInProgress.keys)
+        
+        // get cells should cancel operations
+        var toBeCancelled = allPendingOperations
+        let visiblePaths = Set(pathsArray)
+        toBeCancelled.subtract(visiblePaths)
+        
+        // get cells should be started as new
+        var toBeStarted = visiblePaths
+        toBeStarted.subtract(allPendingOperations)
+        
+        // cancel download and filter operations for unvisible cells
+        for indexPath in toBeCancelled {
+          if let pendingDownload = pendingOperation.downloadsInProgress[indexPath] {
+            pendingDownload.cancel()
+          }
+          pendingOperation.downloadsInProgress.removeValue(forKey: indexPath)
+          if let pendingFiltration = pendingOperation.filtrationsInProgress[indexPath] {
+            pendingFiltration.cancel()
+          }
+          pendingOperation.filtrationsInProgress.removeValue(forKey: indexPath)
+        }
+        
+        // start operation for new visible cells
+        for indexPath in toBeStarted {
+          let recordToProcess = self.photos[indexPath.row]
+          startOperationForPhotoRecord(photoDetails: recordToProcess, indexPath: indexPath)
+        }
+      }
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -116,6 +179,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return photos.count
     }
     
+//    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//      suspendAllOperations()
+//    }
+//
+//    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//      if !decelerate {
+//        loadImagesForOnscreenCells()
+//        resumeAllOperations()
+//      }
+//    }
+//
+//    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//      loadImagesForOnscreenCells()
+//      resumeAllOperations()
+//    }
+//
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
         if cell.accessoryView == nil {
@@ -135,13 +214,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             indecator.stopAnimating()
             cell.imageTitleLalbe.text = "Failed to load"
         case .New, .Download:
-            indecator.stopAnimating()
+            indecator.startAnimating()
             if (!listTableVie.isDragging && !listTableVie.isDecelerating) {
                 self.startOperationForPhotoRecord(photoDetails: photoDetails, indexPath: indexPath)
             }
         }
         return cell
     }
-    
     
 }
