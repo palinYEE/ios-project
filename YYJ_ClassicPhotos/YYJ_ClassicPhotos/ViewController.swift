@@ -197,6 +197,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 //
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
+        /**
+        이부분이 이미지가 없을 경우 대기 화면을 추가하는 부분이다.
+         */
         if cell.accessoryView == nil {
             let indicator = UIActivityIndicatorView(style: .gray)
             cell.accessoryView = indicator
