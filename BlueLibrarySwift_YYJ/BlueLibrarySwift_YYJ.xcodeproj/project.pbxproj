@@ -19,6 +19,8 @@
 		648E5BFC293F678F0005CE64 /* BlueLibrarySwift_YYJUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E5BFB293F678F0005CE64 /* BlueLibrarySwift_YYJUITestsLaunchTests.swift */; };
 		648E5C0C293F72020005CE64 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E5C0B293F72020005CE64 /* model.swift */; };
 		648E5C0F293F73840005CE64 /* albums.json in Resources */ = {isa = PBXBuildFile; fileRef = 648E5C0E293F73840005CE64 /* albums.json */; };
+		64CCBF452940BF45009E940C /* loadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBF442940BF45009E940C /* loadJson.swift */; };
+		64CCBF472940C4C0009E940C /* albumInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBF462940C4C0009E940C /* albumInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		648E5BFB293F678F0005CE64 /* BlueLibrarySwift_YYJUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueLibrarySwift_YYJUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		648E5C0B293F72020005CE64 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		648E5C0E293F73840005CE64 /* albums.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = albums.json; sourceTree = "<group>"; };
+		64CCBF442940BF45009E940C /* loadJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadJson.swift; sourceTree = "<group>"; };
+		64CCBF462940C4C0009E940C /* albumInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = albumInfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 			children = (
 				648E5BDB293F678D0005CE64 /* Main.storyboard */,
 				648E5BE3293F678F0005CE64 /* LaunchScreen.storyboard */,
+				64CCBF462940C4C0009E940C /* albumInfoTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				648E5C0E293F73840005CE64 /* albums.json */,
+				64CCBF442940BF45009E940C /* loadJson.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -301,8 +307,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				648E5C0C293F72020005CE64 /* model.swift in Sources */,
+				64CCBF452940BF45009E940C /* loadJson.swift in Sources */,
 				648E5BDA293F678D0005CE64 /* ViewController.swift in Sources */,
 				648E5BD6293F678D0005CE64 /* AppDelegate.swift in Sources */,
+				64CCBF472940C4C0009E940C /* albumInfoTableViewCell.swift in Sources */,
 				648E5BE0293F678D0005CE64 /* BlueLibrarySwift_YYJ.xcdatamodeld in Sources */,
 				648E5BD8293F678D0005CE64 /* SceneDelegate.swift in Sources */,
 			);

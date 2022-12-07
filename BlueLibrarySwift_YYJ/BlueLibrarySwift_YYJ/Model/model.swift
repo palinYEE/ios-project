@@ -22,5 +22,9 @@ struct MusicInfo {
         self.Year = Year
         self.ImageUrl = ImageUrl
     }
+    
+    func elementCount() -> Int{
+        return 4
+    }
 }
 
