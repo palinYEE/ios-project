@@ -27,27 +27,27 @@
                                 <color key="separatorColor" systemColor="systemGray2Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="albumInfoTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumInfoTableViewCell" id="tob-me-6EJ" customClass="albumInfoTableViewCell" customModule="BlueLibrarySwift_YYJ" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="41.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tob-me-6EJ" id="buU-Wo-rdc">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="41.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm6-jf-gMM">
-                                                    <rect key="frame" x="20" y="9.9999999999999982" width="41" height="21.333333333333329"/>
+                                                    <rect key="frame" x="20" y="10" width="41" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ArtistName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDa-jw-0f1">
-                                                    <rect key="frame" x="287.33333333333331" y="9.9999999999999982" width="85.666666666666686" height="21.333333333333329"/>
+                                                    <rect key="frame" x="287.33333333333331" y="10" width="85.666666666666686" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="EDa-jw-0f1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nm6-jf-gMM" secondAttribute="trailing" constant="180" id="1EX-kw-LcV"/>
+                                                <constraint firstItem="EDa-jw-0f1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nm6-jf-gMM" secondAttribute="trailing" constant="10" id="1EX-kw-LcV"/>
                                                 <constraint firstItem="nm6-jf-gMM" firstAttribute="top" secondItem="buU-Wo-rdc" secondAttribute="top" constant="10" id="35h-Sf-6Ll"/>
                                                 <constraint firstItem="EDa-jw-0f1" firstAttribute="top" secondItem="buU-Wo-rdc" secondAttribute="top" constant="10" id="3uq-xF-b5g"/>
                                                 <constraint firstItem="nm6-jf-gMM" firstAttribute="leading" secondItem="buU-Wo-rdc" secondAttribute="leading" constant="20" id="4g8-sD-hjp"/>
