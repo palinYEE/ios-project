@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     fileprivate let jsonFileName:String = "albums"
     fileprivate let fileExtention: String = "json"
+    fileprivate var currnetIndex: Int = 0
     
     var albumScrollView: UIScrollView!
     
@@ -26,15 +27,25 @@ class ViewController: UIViewController {
     fileprivate var tableViewGenreData: String = ""
     fileprivate var tableViewYearData: String = ""
     
+    /* list Data */
     var albumDataList: [MusicInfo] = []
+    var undoDataList: [MusicInfo] = []      /* 단 한번 데이터 undo 를 지원합니다. */
     
     @IBOutlet weak var albumTableView: UITableView!
     
     fileprivate func loadTableViewDataSetting(_ index: Int) {
-        self.tableViewArtistData = albumDataList[index].Artist
-        self.tableViewAlbumData = albumDataList[index].Album
-        self.tableViewGenreData = albumDataList[index].Genre
-        self.tableViewYearData = String(albumDataList[index].Year)
+        if albumDataList.isEmpty {
+            self.tableViewArtistData = ""
+            self.tableViewAlbumData = ""
+            self.tableViewGenreData = ""
+            self.tableViewYearData = ""
+        } else {
+            self.tableViewArtistData = albumDataList[index].Artist
+            self.tableViewAlbumData = albumDataList[index].Album
+            self.tableViewGenreData = albumDataList[index].Genre
+            self.tableViewYearData = String(albumDataList[index].Year)
+            self.currnetIndex = index
+        }
     }
     
     fileprivate func loadTableView() {
@@ -42,6 +53,7 @@ class ViewController: UIViewController {
         self.albumTableView.dataSource = self
     }
     
+    /* 스크롤 뷰 생성 함수 */
     fileprivate func makeScrollView() {
         scrollWidth = self.view.frame.width
         
@@ -73,6 +85,7 @@ class ViewController: UIViewController {
                     }
                 } else {
                     let image = UIImage(named: "noAlbum")
+                    print("\(index) - noalbum")
                     DispatchQueue.main.async {
                         button.setBackgroundImage(image, for: .normal)
                         self.albumScrollView.addSubview(button)
@@ -85,12 +98,52 @@ class ViewController: UIViewController {
         self.view.addSubview(albumScrollView)
     }
     
+    /* 앨범 이미지 클릭 시 해당 테이블 뷰 변경 함수 */
     @objc func changeTableViewInfo(sender:UIButton) {
         // sender.tag : 해당 엘범의 index 값
         loadTableViewDataSetting(sender.tag)
         self.albumTableView.reloadData()
     }
+    
+    fileprivate func allDeleteScrollviewSubview() {
+        if self.albumScrollView.subviews.count > 0
+        {
+            self.albumScrollView.subviews.forEach({ $0.removeFromSuperview()})
+        }
+    }
 
+    @IBAction func undoButton(_ sender: UIButton) {
+        if undoDataList.isEmpty {
+            return
+        }
+        for i in 0..<undoDataList.count {
+            let data = undoDataList[i]
+            albumDataList.append(data)
+        }
+        allDeleteScrollviewSubview()
+        makeScrollView()
+        undoDataList = []
+    }
+    
+    @IBAction func deleteButton(_ sender: UIButton) {
+        if albumDataList.isEmpty {
+            print("no data")
+            return 
+        }
+        let delAlbumData: MusicInfo = albumDataList[currnetIndex]
+        albumDataList.remove(at: currnetIndex)
+        undoDataList.append(delAlbumData)
+        allDeleteScrollviewSubview()
+        makeScrollView()
+        if currnetIndex == (albumDataList.count) && currnetIndex != 0 {
+            loadTableViewDataSetting(currnetIndex - 1)
+        }else {
+            loadTableViewDataSetting(currnetIndex)
+        }
+        self.albumTableView.reloadData()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "BlueLibrary YYJ"
@@ -103,7 +156,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return albumDataList[0].elementCount()
+        return MusicInfo.init(Artist: "", Album: "", Genre: "", Year: 0, ImageUrl: "").elementCount()
     }
 
     
