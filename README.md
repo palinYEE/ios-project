@@ -33,4 +33,4 @@ ios 개발에 사용되는 기본적인 프로젝트들을 모아둔 레파지�
 	* ![](proj_gif/13_TwitterBird_YYJ.gif)
 14. BlueLibrarySwift_YYJ: json으로 되어있는 엘범 데이터를 읽어서 정보를 보여주고, 삭제 및 undo 를 할 수 있는 구현 내용입니다. 
 	* 해당 프로젝트를 통해서, scrollView 를 공부할 수 있습니다.
-	* ![](proj_git/14_BlueLibrarySwift.gif)
+	* ![](proj_gif/14_BlueLibrarySwift.gif)
