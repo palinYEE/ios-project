@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var multiLevelTableView: UITableView!
-    var sampleData: [sampleModel_level1] = []
+    var sampleData: [Any] = []
     
     func makeSampleData(){
         var resultData: [sampleModel_level1] = [.init(dataString: "1-1", childData: []), .init(dataString: "2-1", childData: []), .init(dataString: "3-1", childData: [])]
@@ -50,13 +50,54 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: multiLevelTableViewCell?
         let member = self.sampleData[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Level1", for: indexPath) as! multiLevelTableViewCell
-        cell.data.text = member.dataString
-        return cell
+        
+        if let level1 = member as? sampleModel_level1 {
+            cell = (tableView.dequeueReusableCell(withIdentifier: "Level1", for: indexPath) as! multiLevelTableViewCell)
+            cell?.data.text = level1.dataString
+        }
+        else if let level2 = member as? sampleModel_level2 {
+            cell = (tableView.dequeueReusableCell(withIdentifier: "Level2", for: indexPath) as! multiLevelTableViewCell)
+            cell?.data.text = level2.dataString
+        } else if let level3 = member as? sampleModel_level3 {
+            cell = (tableView.dequeueReusableCell(withIdentifier: "Level3", for: indexPath) as! multiLevelTableViewCell)
+            cell?.data.text = level3.dataString
+        } else {
+            return UITableViewCell()
+        }
+       
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let row = indexPath.row
+        var member = self.sampleData[row]
+        var ipsArr: [IndexPath] = []
+        if row == 0 {
+            if var level1 = member as? sampleModel_level1 {
+                if level1.isExpanede! {
+                    level1.isExpanede = true
+                    for (index, value) in level1.childData.enumerated() {
+                        self.sampleData.insert(value, at: row + index + 1)
+                        let ip = IndexPath(row: row + index + 1, section: 0)
+                        ipsArr.append(ip)
+                    }
+                    tableView.beginUpdates()
+                    tableView.insertRows(at: ipsArr, with: .left)
+                    tableView.endUpdates()
+                } else {
+                    level1.isExpanede = false
+                    var count = 1
+                    while row + 1 < self.sampleData.count {
+                        let element = self.sampleData[row + 1]
+                    }
+                }
+
+            }
+        }
+        
+        
     }
 }
