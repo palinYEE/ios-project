@@ -18,6 +18,7 @@
 		64F63992294EF1ED0099E71B /* multi_level_tableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F63991294EF1ED0099E71B /* multi_level_tableViewUITests.swift */; };
 		64F63994294EF1ED0099E71B /* multi_level_tableViewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F63993294EF1ED0099E71B /* multi_level_tableViewUITestsLaunchTests.swift */; };
 		64F639A1294EF3B80099E71B /* multiLevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F639A0294EF3B80099E71B /* multiLevelTableViewCell.swift */; };
+		64F639A3294EF5560099E71B /* sampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F639A2294EF5560099E71B /* sampleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		64F63991294EF1ED0099E71B /* multi_level_tableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multi_level_tableViewUITests.swift; sourceTree = "<group>"; };
 		64F63993294EF1ED0099E71B /* multi_level_tableViewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multi_level_tableViewUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		64F639A0294EF3B80099E71B /* multiLevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multiLevelTableViewCell.swift; sourceTree = "<group>"; };
+		64F639A2294EF5560099E71B /* sampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				64F6397E294EF1ED0099E71B /* Info.plist */,
 				64F63976294EF1EB0099E71B /* multi_level_tableView.xcdatamodeld */,
 				64F639A0294EF3B80099E71B /* multiLevelTableViewCell.swift */,
+				64F639A2294EF5560099E71B /* sampleModel.swift */,
 			);
 			path = multi_level_tableView;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				64F6396E294EF1EB0099E71B /* AppDelegate.swift in Sources */,
 				64F63978294EF1EB0099E71B /* multi_level_tableView.xcdatamodeld in Sources */,
 				64F63970294EF1EB0099E71B /* SceneDelegate.swift in Sources */,
+				64F639A3294EF5560099E71B /* sampleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
