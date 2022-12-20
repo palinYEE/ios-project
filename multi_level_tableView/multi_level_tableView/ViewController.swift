@@ -73,31 +73,79 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let row = indexPath.row
-        var member = self.sampleData[row]
+        let member = self.sampleData[row]
         var ipsArr: [IndexPath] = []
-        if row == 0 {
-            if var level1 = member as? sampleModel_level1 {
-                if level1.isExpanede! {
-                    level1.isExpanede = true
-                    for (index, value) in level1.childData.enumerated() {
-                        self.sampleData.insert(value, at: row + index + 1)
-                        let ip = IndexPath(row: row + index + 1, section: 0)
+        if var level1 = member as? sampleModel_level1 {
+            if !level1.isExpanede {
+                level1.isExpanede = true
+                for (index, value) in level1.childData.enumerated() {
+                    self.sampleData.insert(value, at: row + index + 1)
+                    let ip = IndexPath(row: row + index + 1, section: 0)
+                    ipsArr.append(ip)
+                }
+                self.sampleData[row] = level1
+                tableView.beginUpdates()
+                tableView.insertRows(at: ipsArr, with: .left)
+                tableView.endUpdates()
+            } else {
+                level1.isExpanede = false
+                var count = 1
+                while row + 1 < self.sampleData.count {
+                    let element = self.sampleData[row + 1]
+                    if element is sampleModel_level2
+                    {
+                        self.sampleData.remove(at: row + 1)
+                        let ip = IndexPath(row: row + count, section: 0)
                         ipsArr.append(ip)
+                        count += 1
+                        
                     }
-                    tableView.beginUpdates()
-                    tableView.insertRows(at: ipsArr, with: .left)
-                    tableView.endUpdates()
-                } else {
-                    level1.isExpanede = false
-                    var count = 1
-                    while row + 1 < self.sampleData.count {
-                        let element = self.sampleData[row + 1]
+                    else if !(element is sampleModel_level2)
+                    {
+                        break
                     }
                 }
-
+                self.sampleData[row] = level1
+                tableView.beginUpdates()
+                tableView.deleteRows(at: ipsArr, with: .right)
+                tableView.endUpdates()
+                
+            }
+        } else if var level2 = member as? sampleModel_level2 {
+            if !level2.isExpanede {
+                level2.isExpanede = true
+                for (index, value) in level2.childData.enumerated() {
+                    self.sampleData.insert(value, at: row + index + 1)
+                    let ip = IndexPath(row: row + index + 1, section: 0)
+                    ipsArr.append(ip)
+                }
+                self.sampleData[row] = level2
+                tableView.beginUpdates()
+                tableView.insertRows(at: ipsArr, with: .left)
+                tableView.endUpdates()
+            } else {
+                level2.isExpanede = false
+                var count = 1
+                while row + 1 < self.sampleData.count {
+                    let element = self.sampleData[row + 1]
+                    if element is sampleModel_level3
+                    {
+                        self.sampleData.remove(at: row + 1)
+                        let ip = IndexPath(row: row + count, section: 0)
+                        ipsArr.append(ip)
+                        count += 1
+                        
+                    }
+                    else if !(element is sampleModel_level3)
+                    {
+                        break
+                    }
+                }
+                self.sampleData[row] = level2
+                tableView.beginUpdates()
+                tableView.deleteRows(at: ipsArr, with: .right)
+                tableView.endUpdates()
             }
         }
-        
-        
     }
 }
